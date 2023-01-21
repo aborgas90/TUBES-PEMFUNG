@@ -1,0 +1,16 @@
+.test{
+    display: block;
+    width: 100px;
+    height: 50px;
+    background: blue;
+    margin: auto;
+}
+
+.index{
+    display: block;
+    margin: auto;
+}
+
+.title{
+    background: blue;
+}
