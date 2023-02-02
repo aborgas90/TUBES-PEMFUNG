@@ -1,16 +1,50 @@
-<!DOCTYPE html>
+{% extends 'layout.html' %}
+
+{%block content%}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>about</title>
+    <title>About</title>
 </head>
-<body>
-    <h1>about</h1>
-<p>HALAMAN about</p>
+
+<body class="bdy">
+    <section>
+        <div class="about-container">
+            <h1>Anggota Kelompok</h1>
+            <p class="desk"> Untuk memenuhi tugas matakuliah Pemograman Fungsional
+                dengan menerapkan High Order Function dan Web Service mengunakan JSON pada program python
+                dengan menggunakan data real pada sebuah website
+            </p>
+            <div class="slide-container-wrapper">
+                {% for i in range(0,len)%}
+                <div class="slide-container">
+                    <div class="slide-content">
+                        <div class="card-wrapper">
+                            <div class="card">
+                                <div class="image-content">
+                                    <span class="overlay"></span>
+                                    <div class="card-image"></div>
+                                    <img class="profile" src={{datakelompok[i].gambar}} alt="card-img">
+                                </div>
+                                <div class="card-content">
+                                    <h2 class="name">{{datakelompok[i].nama}}</h2>
+                                    <p class="description">{{datakelompok[i].nim}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
 </body>
+
 </html>
-
-
+{%endblock content%}

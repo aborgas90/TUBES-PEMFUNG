@@ -9,7 +9,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 </head>
+<h1 class="header">
+    LAPORAN GEMPA TERKINI
+</h1>
 <body>
+    <div class="content">
+        <table class="tabel">
+            <thead>
+                <tr class="row-ket">
+                    <th>Tanggal</th>
+                    <th>Jam</th>
+                    <th>Coordinat</th>
+                    <th>Lintang</th>
+                    <th>Bujur</th>
+                    <th>Magnitude</th>
+                    <th>Kedalaman</th>
+                    <th>Wilayah</th>
+                    <th>Potensi</th>
+                </tr>
+            </thead>
+            <tbody class="data-gempa-all">
+                {% for data in datagempa %}
+                <tr class="data-gempa">
+                    <td>{{ data.Tanggal }}</td>
+                    <td>{{ data.Jam }}</td>
+                    <td>{{ data.Coordinates }}</td>
+                    <td>{{ data.Lintang }}</td>
+                    <td>{{ data.Bujur }}</td>
+                    <td>{{ data.Magnitude }}</td>
+                    <td>{{ data.Kedalaman }}</td>
+                    <td>{{ data.Wilayah }}</td>
+                    <td>{{ data.Potensi }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <h1 class="header-filter">Data filter gempa yang lebih dari 5.5 Magnitude</h1>
+    <div class="filter">
+        <table class="tb-filter">
+            <thead >
+                <tr class="row-filter">
+                    <th>Tanggal</th>
+                    <th>Magnitude</th>
+                    <th>Wilayah</th>
+                </tr>
+            </thead>
+            {% for gempa in hasilfilter %}
+            <tbody>
+                 <div class="filter">
+                    <td>{{ gempa.Tanggal}}</td>
+                    <td class = "Magnitude">
+                        {{ gempa.Magnitude}}
+                    </td>
+                    <td>{{gempa.Wilayah}}</td>
+                </div>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
 </body>
 </html>
 {%endblock content%}
